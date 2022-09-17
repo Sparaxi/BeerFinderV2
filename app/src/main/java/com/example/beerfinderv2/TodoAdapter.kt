@@ -1,7 +1,9 @@
 package com.example.beerfinderv2
 
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -40,9 +42,18 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.binding.apply {
             val todo = todos[position]
-            apiTitleProduct.text = todo.name
-            apiDescProduct.text = todo.description
+            apiTitleProduct.text = todo.toString()
+//            apiDescProduct.text = todo.description
+
             Picasso.get().load(todo.image_url).into(apiImgGoesHere)
         }
     }
+
+    val beerArrayStorage = arrayOf(todos.toString())
+
+
+
+
+
+
 }

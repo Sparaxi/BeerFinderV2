@@ -1,15 +1,14 @@
 package com.example.beerfinderv2
 
-import android.nfc.Tag
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beerfinderv2.databinding.ActivityMainBinding
-import com.squareup.picasso.Picasso
 import okio.IOException
 import retrofit2.HttpException
+
 
 
 const val TAG = "MainActivity"
@@ -18,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var todoAdapter: TodoAdapter
+
+    private lateinit var Todo : Todo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,11 +43,17 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Log.e(TAG, "Response not successful")
             }
+
         }
+
+        val beerArrayStorage = arrayOf(Todo.toString())
 
 
 
     }
+
+
+
 
     private fun setupRecyclerView() = binding.RecycleView.apply {
         todoAdapter = TodoAdapter()
@@ -55,3 +62,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
