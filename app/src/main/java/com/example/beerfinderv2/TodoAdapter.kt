@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beerfinderv2.databinding.ItemTodoBinding
+import com.squareup.picasso.Picasso
 
 class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
 
@@ -41,6 +42,7 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
             val todo = todos[position]
             apiTitleProduct.text = todo.name
             apiDescProduct.text = todo.description
+            Picasso.get().load(todo.image_url).into(apiImgGoesHere)
         }
     }
 }

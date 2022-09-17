@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beerfinderv2.databinding.ActivityMainBinding
+import com.squareup.picasso.Picasso
 import okio.IOException
 import retrofit2.HttpException
 
@@ -41,13 +42,16 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Log.e(TAG, "Response not successful")
             }
-
         }
+
+
+
     }
 
     private fun setupRecyclerView() = binding.RecycleView.apply {
         todoAdapter = TodoAdapter()
         adapter = todoAdapter
         layoutManager = LinearLayoutManager(this@MainActivity)
+
     }
 }
