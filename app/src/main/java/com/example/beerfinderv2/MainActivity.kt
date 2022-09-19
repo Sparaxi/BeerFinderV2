@@ -1,5 +1,6 @@
 package com.example.beerfinderv2
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var todoAdapter: TodoAdapter
 
-    private lateinit var Todo : Todo
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +47,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        val beerArrayStorage = arrayOf(Todo.toString())
+        todoAdapter.onItemClick = {
+            val intent = Intent(this@MainActivity, DetailScreen::class.java)
+            intent.putExtra("description", it)
+            intent.putExtra("Image", it)
+            startActivity(intent)
+        }
 
 
 

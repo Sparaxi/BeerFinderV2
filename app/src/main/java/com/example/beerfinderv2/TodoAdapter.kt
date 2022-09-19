@@ -12,7 +12,14 @@ import com.squareup.picasso.Picasso
 
 class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
 
+    var onItemClick : ((Todo) -> Unit)? = null
+
+
     inner class TodoViewHolder(val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)
+
+
+
+
 
     private  val diffCallback = object : DiffUtil.ItemCallback<Todo>() {
         override fun areItemsTheSame(oldItem: Todo, newItem: Todo): Boolean {
@@ -46,10 +53,14 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
 //            apiDescProduct.text = todo.description
 
             Picasso.get().load(todo.image_url).into(apiImgGoesHere)
+            holder.itemView.setOnClickListener{
+                onItemClick?.invoke(todo)
+            }
+
         }
     }
 
-    val beerArrayStorage = arrayOf(todos.toString())
+
 
 
 
