@@ -4,30 +4,205 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailScreen"
-    android:background="#A3A3A3">
+    android:background="#FFFFFF"
+    tools:context=".DetailScreen">
+
 
     <TextView
         android:id="@+id/detailText"
-        android:layout_width="wrap_content"
+        android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:text="hello world"
-        android:textSize="25sp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toEndOf="@+id/imageviewdetail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+
+
+    <TextView
+        android:id="@+id/tagLine"
+        android:layout_width="165dp"
+        android:layout_height="13dp"
+        android:text="tagLine"
+        android:textColor="#888889"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailText"
+        app:layout_constraintVertical_bias="0.015" />
+
+    <TextView
+        android:id="@+id/DescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="#7C7C7C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintVertical_bias="0.248" />
+
+    <TextView
+        android:id="@+id/BrewerTipsID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Brewer Tips"
+        android:textColor="#7C7C7C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionBeer"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <TextView
+        android:id="@+id/FoodPairingID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Pairing"
+        android:textColor="#7C7C7C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodPairing"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <TextView
+        android:id="@+id/descriptionBeer"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:text="An Imperial Pilsner in collaboration with beer writers. Tradition. Homage. Revolution. We wanted to showcase the awesome backbone of the Czech brewing tradition, the noble Saaz hop, and also tip our hats to the modern beers that rock our world, and the people who make them."
+        android:textColor="#979696"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionText"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <TextView
+        android:id="@+id/foodPairing"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+
+        android:text="An Imperial Pilsner in collaboration with beer writers. Tradition. Homage. Revolution. We wanted to showcase the awesome backbone of the Czech brewing tradition, the noble Saaz hop, and also tip our hats to the modern beers that rock our world, and the people who make them."
+        android:textColor="#979696"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BrewerTipsID"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <TextView
+        android:id="@+id/BrewerDescription"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        android:text="An Imperial Pilsner in collaboration with beer writers. Tradition. Homage. Revolution. We wanted to showcase the awesome backbone of the Czech brewing tradition, the noble Saaz hop, and also tip our hats to the modern beers that rock our world, and the people who make them."
+        android:textColor="#979696"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FoodPairingID"
+        app:layout_constraintVertical_bias="0.026" />
 
     <ImageView
         android:id="@+id/imageviewdetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@color/white"
+        android:layout_width="84dp"
+        android:layout_height="109dp"
+        android:scaleType="fitCenter"
+        android:src="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069" />
+
+    <TextView
+        android:id="@+id/ebc"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="ebc"
+        android:textColor="#7C7C7C"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toEndOf="@+id/imageviewdetail"
+        app:layout_constraintTop_toBottomOf="@+id/tagLine"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <TextView
+        android:id="@+id/ibu"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="ibu"
+        android:textColor="#7C7C7C"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintStart_toEndOf="@+id/imageviewdetail"
+        app:layout_constraintTop_toBottomOf="@+id/tagLine"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <TextView
+        android:id="@+id/abv"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="abv"
+        android:textColor="#7C7C7C"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toEndOf="@+id/imageviewdetail"
+        app:layout_constraintTop_toBottomOf="@+id/tagLine"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <TextView
+        android:id="@+id/srm"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="srm"
+        android:textColor="#7C7C7C"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/imageviewdetail"
+        app:layout_constraintTop_toBottomOf="@+id/tagLine"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,11 @@ package com.example.beerfinderv2
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.SearchView
+
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beerfinderv2.databinding.ActivityMainBinding
@@ -19,6 +23,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var todoAdapter: TodoAdapter
 
+    private lateinit var todo: Todo
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +32,26 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupRecyclerView()
+
+        binding.editTextSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if(query != null) {
+
+                }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
+            }
+
+        })
+
+        binding.RecycleView.addItemDecoration(
+
+            MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.padding_medium))
+        )
 
         lifecycleScope.launchWhenCreated {
             val response = try {
@@ -53,13 +79,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("Image", it)
             startActivity(intent)
         }
-
-
-
     }
-
-
-
 
     private fun setupRecyclerView() = binding.RecycleView.apply {
         todoAdapter = TodoAdapter()
@@ -68,4 +88,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+
 

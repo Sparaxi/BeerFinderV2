@@ -9,14 +9,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beerfinderv2.databinding.ItemTodoBinding
 import com.squareup.picasso.Picasso
+import java.util.logging.Filter
 
 class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
 
     var onItemClick : ((Todo) -> Unit)? = null
 
 
-    inner class TodoViewHolder(val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)
 
+
+    inner class TodoViewHolder(val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)
 
 
 
@@ -38,6 +40,8 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
 
     override fun getItemCount() = todos.size
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(ItemTodoBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -49,8 +53,11 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.binding.apply {
             val todo = todos[position]
-            apiTitleProduct.text = todo.toString()
-//            apiDescProduct.text = todo.description
+            beerNameCardView.text = todo.name
+            taglineCardView.text = todo.tagline
+            abvCardView.text = "abv: " + todo.abv.toString()
+
+
 
             Picasso.get().load(todo.image_url).into(apiImgGoesHere)
             holder.itemView.setOnClickListener{
@@ -59,12 +66,6 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
 
         }
     }
-
-
-
-
-
-
 
 
 }

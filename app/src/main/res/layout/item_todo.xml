@@ -4,49 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="125dp"
-    android:background="@drawable/layout_bg"
-    >
+    android:background="@drawable/layout_bg">
 
 
     <ImageView
         android:id="@+id/apiImgGoesHere"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="300dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="61dp"
+        android:layout_height="97dp"
+
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/apiTitleProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
+        android:id="@+id/beerNameCardView"
+        android:layout_width="320dp"
+        android:layout_height="30dp"
+        android:text="example "
+        android:textAlignment="center"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toEndOf="@+id/apiImgGoesHere"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
+        app:layout_constraintVertical_bias="0.494" />
 
-        <TextView
-        android:id="@+id/apiDescProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="description goes here"
+    <TextView
+        android:id="@+id/abvCardView"
+        android:layout_width="52dp"
+        android:layout_height="14dp"
+        android:text="abv example"
+        android:textAlignment="textStart"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toEndOf="@+id/taglineCardView"
+        app:layout_constraintTop_toBottomOf="@+id/beerNameCardView"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <TextView
+        android:id="@+id/taglineCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="14dp"
+        android:text="help"
+        android:textAlignment="textEnd"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toEndOf="@+id/apiImgGoesHere"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574" />
+        app:layout_constraintVertical_bias="0.873" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

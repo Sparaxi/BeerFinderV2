@@ -8,7 +8,7 @@ import retrofit2.http.Path
 
 interface TodoApi {
 
-    @GET("/v2/beers?page=1&per_page=5")
+    @GET("/v2/beers")
    suspend fun getTodos(): Response<List<Todo>>
 
     @GET("/v2/beers?beer_name={word}")
