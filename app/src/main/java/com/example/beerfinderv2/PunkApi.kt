@@ -6,13 +6,13 @@ import retrofit2.http.Path
 
 // in this interface we write all the functions we need to access our api
 
-interface TodoApi {
+interface PunkApi {
 
     @GET("/v2/beers")
-   suspend fun getTodos(): Response<List<Todo>>
+   suspend fun getTodos(): Response<List<BeerDataStorage>>
 
     @GET("/v2/beers?beer_name={word}")
     suspend fun searchBeers(
         @Path("word") word: String
-    ): List<Todo>
+    ): List<BeerDataStorage>
 }

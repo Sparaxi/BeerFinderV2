@@ -2,12 +2,10 @@ package com.example.beerfinderv2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.ImageView
-import android.widget.TextView
 import com.example.beerfinderv2.databinding.ActivityDetailScreenBinding
 import com.squareup.picasso.Picasso
 
+@Suppress("DEPRECATION")
 class DetailScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailScreenBinding
@@ -17,7 +15,7 @@ class DetailScreen : AppCompatActivity() {
         binding = ActivityDetailScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val beer = intent.getParcelableExtra<Todo>("description")
+        val beer = intent.getParcelableExtra<BeerDataStorage>("description")
         if (beer !=null){
             binding.detailText.text = beer.name
             binding.tagLine.text = beer.tagline

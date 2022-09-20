@@ -9,32 +9,25 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beerfinderv2.databinding.ItemTodoBinding
 import com.squareup.picasso.Picasso
-import java.util.logging.Filter
 
-class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
+class BeerRVAdapter : RecyclerView.Adapter<BeerRVAdapter.TodoViewHolder>(){
 
-    var onItemClick : ((Todo) -> Unit)? = null
-
-
-
+    var onItemClick : ((BeerDataStorage) -> Unit)? = null
 
     inner class TodoViewHolder(val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)
 
-
-
-
-    private  val diffCallback = object : DiffUtil.ItemCallback<Todo>() {
-        override fun areItemsTheSame(oldItem: Todo, newItem: Todo): Boolean {
+    private  val diffCallback = object : DiffUtil.ItemCallback<BeerDataStorage>() {
+        override fun areItemsTheSame(oldItem: BeerDataStorage, newItem: BeerDataStorage): Boolean {
             return  oldItem.name == newItem.name
         }
 
-        override fun areContentsTheSame(oldItem: Todo, newItem: Todo): Boolean {
+        override fun areContentsTheSame(oldItem: BeerDataStorage, newItem: BeerDataStorage): Boolean {
             return oldItem == newItem
         }
     }
 
     private val differ = AsyncListDiffer(this, diffCallback)
-    var todos: List<Todo>
+    var todos: List<BeerDataStorage>
         get() = differ.currentList
         set(value) {differ.submitList(value)}
 
@@ -56,9 +49,6 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
             beerNameCardView.text = todo.name
             taglineCardView.text = todo.tagline
             abvCardView.text = "abv: " + todo.abv.toString()
-
-
-
             Picasso.get().load(todo.image_url).into(apiImgGoesHere)
             holder.itemView.setOnClickListener{
                 onItemClick?.invoke(todo)

@@ -3,7 +3,7 @@ package com.example.beerfinderv2
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Todo(
+data class BeerDataStorage(
     val abv: Float,
 
     val brewers_tips: String,
@@ -11,26 +11,31 @@ data class Todo(
     val description: String,
     val ebc: Float,
 
-//    val food_paring: String, // doesnt seem to work as List<String> need to fix this later
+//    val food_paring: Unit, // Returns null pointer
+
     val ibu: Float,
     val image_url: String,
     val name: String,
 //
     val srm: Float,
     val tagline: String,
-) : Parcelable {
+
+
+    ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readFloat(),
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readFloat(),
-//        parcel.readString()!!,
+//        parcel.readStringList(),
         parcel.readFloat(),
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readFloat(),
         parcel.readString()!!
     ) {
+//        food_paring.toString()
+
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -49,16 +54,26 @@ data class Todo(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Todo> {
-        override fun createFromParcel(parcel: Parcel): Todo {
-            return Todo(parcel)
+    companion object CREATOR : Parcelable.Creator<BeerDataStorage> {
+        override fun createFromParcel(parcel: Parcel): BeerDataStorage {
+            return BeerDataStorage(parcel)
         }
 
-        override fun newArray(size: Int): Array<Todo?> {
+        override fun newArray(size: Int): Array<BeerDataStorage?> {
             return arrayOfNulls(size)
         }
     }
 
+
+
 }
+
+//private fun Parcel.readStringList() {
+//    readList(String)
+//}
+
+
+
+
 
 

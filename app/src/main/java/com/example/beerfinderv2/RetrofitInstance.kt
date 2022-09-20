@@ -5,11 +5,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    val api: TodoApi by lazy {
+    val api: PunkApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.punkapi.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(TodoApi::class.java)
+            .create(PunkApi::class.java)
     }
 }

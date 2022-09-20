@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.SearchView
 
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beerfinderv2.databinding.ActivityMainBinding
@@ -21,9 +19,9 @@ const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var todoAdapter: TodoAdapter
+    private lateinit var todoAdapter: BeerRVAdapter
 
-    private lateinit var todo: Todo
+    private lateinit var todo: BeerDataStorage
 
 
 
@@ -82,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() = binding.RecycleView.apply {
-        todoAdapter = TodoAdapter()
+        todoAdapter = BeerRVAdapter()
         adapter = todoAdapter
         layoutManager = LinearLayoutManager(this@MainActivity)
 
